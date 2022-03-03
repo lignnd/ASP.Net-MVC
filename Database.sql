@@ -1,0 +1,44 @@
+--CREATE DATABASE CiberSales
+--GO
+
+--USE CiberSales
+--go
+
+--CREATE TABLE Customer (
+--	Id BIGINT IDENTITY(1,1) NOT NULL,
+--	Name NVARCHAR(255)NOT NULL,
+--	Address NVARCHAR(255) NOT NULL,
+--	PRIMARY KEY(Id)
+--)
+
+--CREATE TABLE Category (
+--	Id BIGINT IDENTITY(1,1) NOT NULL,
+--	Name NVARCHAR(255)NOT NULL,
+--	Description NVARCHAR(255)  NULL,
+--	PRIMARY KEY(Id)
+--)
+
+--CREATE TABLE Product (
+--	Id BIGINT IDENTITY(1,1) NOT NULL,
+--	Name NVARCHAR(255)NOT NULL,
+--	Price DECIMAL(8,2) NOT NULL,
+--	Description NVARCHAR(255) NULL,
+--	CategoryId BIGINT NOT NULL,
+--	PRIMARY KEY(Id),
+--	FOREIGN KEY (CategoryId) REFERENCES Category(Id)
+--)
+
+--CREATE TABLE CustomerOrder (
+--	Id BIGINT IDENTITY(1,1) NOT NULL,
+--	CustomerId BIGINT NOT NULL,
+--	ProductId BIGINT NOT NULL,
+--	Amount INT NOT NULL ,
+--	OrderDate DATETIME NOT NULL
+--	PRIMARY KEY(Id),
+--	FOREIGN KEY (CustomerId) REFERENCES Customer(Id),
+--	FOREIGN KEY (ProductId) REFERENCES Product(Id)
+--)
+
+
+
+
