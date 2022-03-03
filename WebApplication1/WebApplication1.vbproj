@@ -49,9 +49,17 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -150,9 +158,19 @@
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\FilterConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="Controllers\CategoriesController.vb" />
+    <Compile Include="Controllers\CustomerOrdersController.vb" />
+    <Compile Include="Controllers\CustomersController.vb" />
+    <Compile Include="Controllers\ProductsController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Category.vb" />
+    <Compile Include="Models\CiberSalesDbcontext.vb" />
+    <Compile Include="Models\Customer.vb" />
+    <Compile Include="Models\CustomerOrder.vb" />
+    <Compile Include="Models\Product.vb" />
+    <Compile Include="Models\sysdiagram.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -209,6 +227,26 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Categories\Create.vbhtml" />
+    <Content Include="Views\Categories\Delete.vbhtml" />
+    <Content Include="Views\Categories\Details.vbhtml" />
+    <Content Include="Views\Categories\Edit.vbhtml" />
+    <Content Include="Views\Categories\Index.vbhtml" />
+    <Content Include="Views\Customers\Create.vbhtml" />
+    <Content Include="Views\Customers\Delete.vbhtml" />
+    <Content Include="Views\Customers\Details.vbhtml" />
+    <Content Include="Views\Customers\Edit.vbhtml" />
+    <Content Include="Views\Customers\Index.vbhtml" />
+    <Content Include="Views\Products\Create.vbhtml" />
+    <Content Include="Views\Products\Delete.vbhtml" />
+    <Content Include="Views\Products\Details.vbhtml" />
+    <Content Include="Views\Products\Edit.vbhtml" />
+    <Content Include="Views\Products\Index.vbhtml" />
+    <Content Include="Views\CustomerOrders\Create.vbhtml" />
+    <Content Include="Views\CustomerOrders\Delete.vbhtml" />
+    <Content Include="Views\CustomerOrders\Details.vbhtml" />
+    <Content Include="Views\CustomerOrders\Edit.vbhtml" />
+    <Content Include="Views\CustomerOrders\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -239,7 +277,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
